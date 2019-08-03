@@ -38,7 +38,7 @@
                         <!-- Logo -->
                         <div class="content-header-item">
                             <a class="link-effect font-w700" href="/dashboard">
-                                <i class="si si-fire text-primary"></i>
+                                <i class="text-primary"></i>
                                 <span class="font-size-xl text-dual-primary-dark">clean</span><span class="font-size-xl text-primary">blog</span>
                             </a>
                         </div>
@@ -58,22 +58,6 @@
                                 <i class="si si-cup"></i>
                                 <span class="sidebar-mini-hide">Dashboard</span></a>
                         </li>
-                        @if(auth()->user()->isAdmin == 1 )
-                        <li>
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">
-                                <i class="si si-settings"></i>
-                                <span class="sidebar-mini-hide">Setting</span></a>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <span class="sidebar-mini-hide">General Settings</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="sidebar-mini-hide">Social Media Settings</span></a>
-                                </li>
-                            </ul>
-                        </li>
                         <li>
                             <a class="nav-submenu" data-toggle="nav-submenu" href="#">
                                 <i class="si si-docs"></i>
@@ -89,23 +73,80 @@
                                 </li>
                             </ul>
                         </li>
-                        @endif
                         <li>
-                            <a href="/dashboard">
-                                <i class="si si-folder"></i>
-                                <span class="sidebar-mini-hide">Categories</span></a>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">
+                                <i class="si si-note"></i>
+                                <span class="sidebar-mini-hide">Articles</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini-hide">View Articles</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini-hide">Add New Articles</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini-hide">Categories</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini-hide">Tags</span></a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="/dashboard">
-                                <i class="si si-book-open"></i>
-                                <span class="sidebar-mini-hide">Latest Posts</span></a>
+                                <i class="si si-picture"></i>
+                                <span class="sidebar-mini-hide">Media</span></a>
+                        </li>
+                        <li>
+                            <a href="/dashboard">
+                                <i class="si si-bubbles"></i>
+                                <span class="sidebar-mini-hide">Comments</span></a>
                         </li>
                         <li class="nav-main-heading">
-                            <span class="sidebar-mini-hidden">Other Manu</span></li>
+                            <span class="sidebar-mini-hidden">System</span></li>
+                            @if(auth()->user()->isAdmin == 1 )
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">
+                                <i class="si si-settings"></i>
+                                <span class="sidebar-mini-hide">Setting</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini-hide">General Settings</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini-hide">Social Media Settings</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        @endif
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">
+                                <i class="si si-diamond"></i>
+                                <span class="sidebar-mini-hide">Themes</span></a>
+                            <ul>
                             <li>
-                            <a href="/dashboard">
-                                <i class="si si-feed"></i>
-                                <span class="sidebar-mini-hide">Sitemap</span></a>
+                                <a href="#">
+                                        <span class="sidebar-mini-hide">View Theme</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini-hide">Menus</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini-hide">Widgets</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini-hide">Theme Options</span></a>
+                                </li>
+                            </ul>
                         </li>
                         @if(auth()->user()->isAdmin == 1 )
                         <li>
@@ -114,6 +155,11 @@
                                 <span class="sidebar-mini-hide">Plugins</span></a>
                         </li>
                         @endif
+                        <li>
+                            <a href="/dashboard">
+                                <i class="si si-feed"></i>
+                                <span class="sidebar-mini-hide">Sitemap</span></a>
+                        </li>
                         <li>
                             <a href="/dashboard">
                                 <i class="si si-notebook"></i>
@@ -206,24 +252,9 @@
                                 </div>
                             </div>
                             <div class="d-none d-xl-block">
-                                <h6 class="dropdown-header">Main Content</h6>
+                          <h6 class="dropdown-header">Main Content</h6>
                                 <button type="button" class="btn btn-sm btn-block btn-alt-secondary mb-10" data-toggle="layout" data-action="content_layout_toggle">Toggle Layout</button>
                             </div>
-                            <!-- <div class="dropdown-divider"></div> -->
-                            <!-- <div class="row gutters-tiny text-center">
-                                <div class="col-6">
-                                    <a class="dropdown-item mb-0" href="be_layout_api.html">
-                                        <i class="si si-chemistry mr-5"></i>
-                                        Layout API
-                                    </a>
-                                </div>
-                                <div class="col-6">
-                                    <a class="dropdown-item mb-0" href="be_ui_color_themes.html">
-                                        <i class="fa fa-paint-brush mr-5"></i>
-                                        Color Themes
-                                    </a>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <!-- END Layout Options -->
@@ -241,9 +272,9 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right min-width-200" aria-labelledby="page-header-user-dropdown">
                         @if(auth()->user()->isAdmin == 1 )
-                            <h5 class="h6 text-center py-10 mb-5 border-b text-uppercase">Administrator<br><a class="text-center text-lowercase font-weight-light font-italic">{{ Auth::user()->email }}</a></h5>
+                            <h5 class="h6 text-center py-10 mb-5 border-b text-uppercase">Administrator</h5>
                         @else
-                            <h5 class="h6 text-center py-10 mb-5 border-b text-uppercase">Member<br><a class="text-center text-lowercase  font-weight-light font-italic">{{ Auth::user()->email }}</a></h5>
+                            <h5 class="h6 text-center py-10 mb-5 border-b text-uppercase">Member</h5>
                         @endif
                             <a class="dropdown-item" href="be_pages_generic_profile.html">
                                 <i class="si si-user mr-5"></i>
