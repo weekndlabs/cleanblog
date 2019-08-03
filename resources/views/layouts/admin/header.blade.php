@@ -191,7 +191,8 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <!-- END Open Search Section -->
-
+                    
+                <!-- END Live View -->
                     <!-- Layout Options (used just for demonstration) -->
                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
                     <div class="btn-group" role="group">
@@ -260,9 +261,13 @@
                     <!-- END Layout Options -->
                 </div>
                 <!-- END Left Section -->
-
+                
                 <!-- Right Section -->
                 <div class="content-header-section">
+                    <!-- Live Views -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary">
+                    <a href="http://localhost:8000" title="Live View" target="_blank"><i class="fa fa-globe"></i></a>
+                    </button>
                     <!-- User Dropdown -->
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
