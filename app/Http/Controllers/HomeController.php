@@ -30,8 +30,8 @@ class HomeController extends Controller
     {
         return view('admin.home');
     }
-    public function dashboard()
+    public function pageview()
     {
-        return view('dashboard');
+        return view('admin.pageview');
     }
 }

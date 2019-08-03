@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.blog.layout')
 
 @section('content')
 <main id="page-content">

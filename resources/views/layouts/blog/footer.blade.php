@@ -44,6 +44,7 @@
 <!-- END Footer -->
 </div>
 <!-- END Page Container -->
-
+<script src="js/cleandash.core.min.js"></script>
+<script src="js/cleandash.app.min.js"></script>
 </body>
 </html>

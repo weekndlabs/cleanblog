@@ -12,12 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('blog.index');
 });
 
 Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', 'HomeController@index')->name('dashboard');
+    Route::get('/pages', 'HomeController@pageview')->name('pages');
+});
+
 Route::get('/admin/home', 'HomeController@admin')->middleware('admin');
 
 Route::get('/auth/{provider}', 'Auth\SocialiteController@redirectToProvider');

@@ -43,12 +43,14 @@
 									Tech</a>
                                     @if (Route::has('login')) @auth
 								<a href="{{ url('/dashboard') }}">
-									<button type="button" class="btn btn-light d-none d-md-inline-block">Dashboard</button>@else
+									<button type="button" class="btn btn-light d-none d-md-inline-block">Dashboard</button></a>
+									@else
 									<a class="nav-main-item d-none d-md-inline-block" href="{{ route('login') }}"> <i class="fal fa-fw fa-sign-in mr-1"></i>
 										Login</a>
-                                        @endauth @endif
-									<a class="nav-main-item nav-main-item-featured d-none d-md-inline-block" href="https://github.com/weekndlabs/cleanblog" target="_blank"> <i class="fal fa-fw fa-download mr-1"></i>
-										Get Source Code</a>
+										@endauth @endif
+										<button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="header_search_on">
+                        					<i class="fal fa-search"></i>
+                    					</button>
 							</div>
 						</div>
 						<div class="nav-main-container d-md-none">

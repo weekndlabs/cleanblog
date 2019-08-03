@@ -13,11 +13,21 @@
 </div>
 <!-- END Page Container -->
 
-<script src="js/cleandash.core.min.js"></script>
-<script src="js/cleandash.app.min.js"></script>
+<script src="{{asset('js/cleandash.core.min.js')}}"></script>
+<script src="{{asset('js/cleandash.app.min.js')}}"></script>
+<script>
+    $('#check-all').click(function (e) {
+    $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+});</script>
 <!-- Page JS Plugins -->
-<script src="js/plugins/chartjs/Chart.bundle.min.js"></script>
+<script src="{{asset('js/plugins/chartjs/Chart.bundle.min.js')}}"></script>
+<script src="{{asset('js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('js/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
 <!-- Page JS Code -->
-<script src="js/pages/be_pages_dashboard.min.js"></script>
+<script src="{{asset('js/pages/be_pages_dashboard.min.js')}}"></script>
+<script src="{{asset('js/pages/be_tables_datatables.min.js')}}"></script>
+
+
+
 </body>
 </html>

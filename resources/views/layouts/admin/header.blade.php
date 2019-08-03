@@ -6,7 +6,8 @@
     <title>Dashboard Admin Clean Blog</title>
     <link rel="icon" type="image/x-icon" href="{{asset('media/logo.png')}}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
-    <link rel="stylesheet" id="css-main" href="css/cleandash.css">
+    <link rel="stylesheet" href="{{asset('js/plugins/datatables/dataTables.bootstrap4.css')}}">
+    <link rel="stylesheet" id="css-main" href="{{ asset('css/cleandash.css')}}">
 </head>
 
 <body>
@@ -54,114 +55,114 @@
                             <span class="sidebar-mini-hidden">Main Navigation</span></li>
                         <li>
                         <li>
-                            <a class="active" href="/dashboard">
+                            <a class="{{ (request()->is('dashboard')) ? 'active' : '' }}" href="/dashboard">
                                 <i class="si si-cup"></i>
                                 <span class="sidebar-mini-hide">Dashboard</span></a>
                         </li>
-                        <li>
+                        <li class="{{ (request()->is('dashboard/pages*')) ? 'open' : '' }}">
                             <a class="nav-submenu" data-toggle="nav-submenu" href="#">
                                 <i class="si si-docs"></i>
                                 <span class="sidebar-mini-hide">Pages</span></a>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/pages')) ? 'active' : '' }}" href="/dashboard/pages">
                                         <span class="sidebar-mini-hide">View Pages</span></a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/pages/create')) ? 'active' : '' }}" href="/dashboard/pages/create">
                                         <span class="sidebar-mini-hide">Add New Pages</span></a>
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="{{ (request()->is('dashboard/articles*')) ? 'open' : '' }}" >
                             <a class="nav-submenu" data-toggle="nav-submenu" href="#">
                                 <i class="si si-note"></i>
                                 <span class="sidebar-mini-hide">Articles</span></a>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/acticles')) ? 'active' : '' }}" href="/dashboard/articles">
                                         <span class="sidebar-mini-hide">View Articles</span></a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/acticles/create')) ? 'active' : '' }}" href="/dashboard/articles/create">
                                         <span class="sidebar-mini-hide">Add New Articles</span></a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/acticles/categories')) ? 'active' : '' }}" href="/dashboard/articles/categories">
                                         <span class="sidebar-mini-hide">Categories</span></a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/acticles/tags')) ? 'active' : '' }}" href="/dashboard/articles/tags">
                                         <span class="sidebar-mini-hide">Tags</span></a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="/dashboard">
+                            <a class="{{ (request()->is('dashboard/media')) ? 'active' : '' }}" href="/dashboard/media">
                                 <i class="si si-picture"></i>
                                 <span class="sidebar-mini-hide">Media</span></a>
                         </li>
                         <li>
-                            <a href="/dashboard">
+                            <a class="{{ (request()->is('dashboard/comments')) ? 'active' : '' }}" href="/dashboard/comments">
                                 <i class="si si-bubbles"></i>
                                 <span class="sidebar-mini-hide">Comments</span></a>
                         </li>
                         <li class="nav-main-heading">
                             <span class="sidebar-mini-hidden">System</span></li>
                             @if(auth()->user()->isAdmin == 1 )
-                        <li>
+                        <li class="{{ (request()->is('dashboard/settings*')) ? 'open' : '' }}" >
                             <a class="nav-submenu" data-toggle="nav-submenu" href="#">
                                 <i class="si si-settings"></i>
                                 <span class="sidebar-mini-hide">Setting</span></a>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/settings')) ? 'active' : '' }}" href="/dashboard/settings">
                                         <span class="sidebar-mini-hide">General Settings</span></a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/settings/socials')) ? 'active' : '' }}" href="/dashboard/settings/socials">
                                         <span class="sidebar-mini-hide">Social Media Settings</span></a>
                                 </li>
                             </ul>
                         </li>
                         @endif
-                        <li>
+                        <li class="{{ (request()->is('dashboard/themes*')) ? 'open' : '' }}" >
                             <a class="nav-submenu" data-toggle="nav-submenu" href="#">
                                 <i class="si si-diamond"></i>
                                 <span class="sidebar-mini-hide">Themes</span></a>
                             <ul>
                             <li>
-                                <a href="#">
+                                <a class="{{ (request()->is('dashboard/themes')) ? 'active' : '' }}" href="/dashboard/themes">
                                         <span class="sidebar-mini-hide">View Theme</span></a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/themes/menus')) ? 'active' : '' }}" href="/dashboard/theme/menus">
                                         <span class="sidebar-mini-hide">Menus</span></a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/themes/widgets')) ? 'active' : '' }}" href="/dashboard/themes/widgets">
                                         <span class="sidebar-mini-hide">Widgets</span></a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a class="{{ (request()->is('dashboard/themes/options')) ? 'active' : '' }}" href="/dashboard/themes/options">
                                         <span class="sidebar-mini-hide">Theme Options</span></a>
                                 </li>
                             </ul>
                         </li>
                         @if(auth()->user()->isAdmin == 1 )
                         <li>
-                            <a href="/dashboard">
+                            <a class="{{ (request()->is('dashboard/plugins')) ? 'active' : '' }}" href="/dashboard/plugins">
                                 <i class="si si-puzzle"></i>
                                 <span class="sidebar-mini-hide">Plugins</span></a>
                         </li>
                         @endif
                         <li>
-                            <a href="/dashboard">
+                            <a class="{{ (request()->is('dashboard/sitemap')) ? 'active' : '' }}" href="/dashboard/sitemap">
                                 <i class="si si-feed"></i>
                                 <span class="sidebar-mini-hide">Sitemap</span></a>
                         </li>
                         <li>
-                            <a href="/dashboard">
+                            <a class="{{ (request()->is('dashboard/documentation')) ? 'active' : '' }}" href="/dashboard/documentation">
                                 <i class="si si-notebook"></i>
                                 <span class="sidebar-mini-hide">Documentation</span></a>
                         </li>
@@ -192,7 +193,6 @@
                     </button>
                     <!-- END Open Search Section -->
                     
-                <!-- END Live View -->
                     <!-- Layout Options (used just for demonstration) -->
                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
                     <div class="btn-group" role="group">
@@ -268,6 +268,7 @@
                     <button type="button" class="btn btn-circle btn-dual-secondary">
                     <a href="http://localhost:8000" title="Live View" target="_blank" style="color: black;"><i class="si si-globe"></i></a>
                     </button>
+                    <!-- END Live View -->
                     <!-- User Dropdown -->
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
