@@ -266,7 +266,7 @@
                 <div class="content-header-section">
                     <!-- Live Views -->
                     <button type="button" class="btn btn-circle btn-dual-secondary">
-                    <a href="http://localhost:8000" title="Live View" target="_blank"><i class="fa fa-globe"></i></a>
+                    <a href="http://localhost:8000" title="Live View" target="_blank" style="color: black;"><i class="si si-globe"></i></a>
                     </button>
                     <!-- User Dropdown -->
                     <div class="btn-group" role="group">
